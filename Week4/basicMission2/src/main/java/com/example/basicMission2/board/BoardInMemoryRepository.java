@@ -20,11 +20,6 @@ public class BoardInMemoryRepository implements BoardRepository {
     }
 
     @Override
-    public List<BoardDto> findAll() {
-        return this.boardList;
-    }
-
-    @Override
     public BoardDto findByID(int board_id) {
         return this.boardList.get(board_id);
     }
