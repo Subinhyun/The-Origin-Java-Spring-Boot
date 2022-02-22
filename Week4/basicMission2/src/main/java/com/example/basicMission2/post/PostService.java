@@ -1,5 +1,7 @@
 package com.example.basicMission2.post;
 
+import com.example.basicMission2.post.PostDto;
+
 import java.util.List;
 
 public interface PostService {
