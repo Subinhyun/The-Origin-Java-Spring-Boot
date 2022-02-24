@@ -5,9 +5,7 @@ import com.example.basicMissionanswer.model.PostDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @Repository
 public class InMemoryPostRepository implements PostRepository{
@@ -40,25 +38,55 @@ public class InMemoryPostRepository implements PostRepository{
         if (postDto == null) {
             return null;
         }
-        else if (!Object.equals(postDto.getBoardId(), boardId)) {
+        else if (!Objects.equals(postDto.getBoardId(), boardId)) {
             return null;
         }
-        return null;
+        return postDto;
     }
 
     @Override
-    public Collection<PostDto> readAll(Long boadId) {
-        if (boardRepository.read(boadId) == null) return null;
-        return null;
+    public Collection<PostDto> readAll(Long boardId) {
+        if (boardRepository.read(boardId) == null) return null;
+        Collection<PostDto> postList = new ArrayList<>();
+        memory.forEach((postId, postDto) -> {
+            if (Objects.equals(postDto.getBoardId(), boardId))
+                postList.add(postDto);
+        });
+        return postList;
     }
 
     @Override
     public boolean update(Long boardId, Long postId, PostDto dto) {
-        return false;
+        PostDto targetPost = memory.getOrDefault(postId, null);
+        if (targetPost == null){
+            return false;
+        }
+        else if (!Objects.equals(targetPost.getBoardId(), boardId)){
+            return false;
+        }
+        else if (!Objects.equals(targetPost.getPassword(), dto.getPassword())){
+            return false;
+        }
+        targetPost.setTitle(
+                dto.getTitle() == null ? targetPost.getTitle() : dto.getTitle());
+        targetPost.setContent(
+                dto.getContent() == null ? targetPost.getContent() : dto.getContent());
+        return true;
     }
 
     @Override
     public boolean delete(Long boardId, Long postId, String password) {
-        return false;
+        PostDto targetPost = memory.getOrDefault(postId, null);
+        if (targetPost == null){
+            return false;
+        }
+        else if (!Objects.equals(targetPost.getBoardId(), boardId)){
+            return false;
+        }
+        else if (!Objects.equals(targetPost.getPassword(), password)){
+            return false;
+        }
+        memory.remove(postId);
+        return true;
     }
 }
