@@ -53,5 +53,4 @@ public class PostDao {
             return mapper.deletePost(id);
         }
     }
-
 }

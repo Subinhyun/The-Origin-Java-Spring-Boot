@@ -6,13 +6,30 @@
         insert into POST(title, content, writer, board)
         values (#{title}, #{content}, #{writer}, ${board})
     </insert>
+    <insert id="createPostAll"
+            parameterType="dev.hsooovn.mybatis.dto.PostDto">
+        insert into POST(title, content, writer, board)
+        values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.title}, #{item.content}, #{item.writer}, ${item.board})
+        </foreach>
+    </insert>
     <select id="readPost"
             parameterType="int"
             resultType="dev.hsooovn.mybatis.dto.PostDto">
         select * from post where id = ${id}
     </select>
     <select id="readPostAll" resultType="dev.hsooovn.mybatis.dto.PostDto">
-        selcet * from post
+        select * from post
+    </select>
+    <select id="readPostQuery"
+            parameterType="dev.hsooovn.mybatis.dto.PostDto"
+            resultType="dev.hsooovn.mybatis.dto.PostDto">
+        select * from post
+        where title = #{title}
+        <if test="writer != null">
+            and writer = #{writer}
+        </if>
     </select>
     <update id="updatePost" parameterType="dev.hsooovn.mybatis.dto.PostDto">
         update post
