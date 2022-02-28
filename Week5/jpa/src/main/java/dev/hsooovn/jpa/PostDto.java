@@ -1,41 +1,28 @@
-package dev.hsooovn.jpa.entity;
+package dev.hsooovn.jpa;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "post")
-public class PostEntity extends BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+public class PostDto {
+    private int id;
     private String title;
     private String content;
     private String writer;
+    private int boardId;
 
-    @ManyToOne(
-            targetEntity = BoardEntity.class,
-            fetch = FetchType.LAZY
-    )
-    @JoinColumn(name = "board_id")
-    private BoardEntity boardEntity;
-
-    public PostEntity() {
+    public PostDto() {
     }
 
-    public PostEntity(Long id, String title, String content, String writer, BoardEntity boardEntity) {
+    public PostDto(int id, String title, String content, String writer, int boardId) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.writer = writer;
-        this.boardEntity = boardEntity;
+        this.boardId = boardId;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -63,22 +50,22 @@ public class PostEntity extends BaseEntity {
         this.writer = writer;
     }
 
-    public BoardEntity getBoardEntity() {
-        return boardEntity;
+    public int getBoardId() {
+        return boardId;
     }
 
-    public void setBoardEntity(BoardEntity boardEntity) {
-        this.boardEntity = boardEntity;
+    public void setBoardId(int boardId) {
+        this.boardId = boardId;
     }
 
     @Override
     public String toString() {
-        return "PostEntity{" +
+        return "PostDto{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 ", writer='" + writer + '\'' +
-                ", boardEntity=" + boardEntity +
+                ", boardId=" + boardId +
                 '}';
     }
 }
