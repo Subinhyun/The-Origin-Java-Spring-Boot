@@ -1,5 +1,8 @@
 package dev.hsooovn.jpa.entity;
 
+import dev.hsooovn.jpa.entity.BaseEntity;
+import dev.hsooovn.jpa.entity.BoardEntity;
+
 import javax.persistence.*;
 
 @Entity

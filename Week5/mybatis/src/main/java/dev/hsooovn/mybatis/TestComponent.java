@@ -3,11 +3,8 @@ package dev.hsooovn.mybatis;
 import dev.hsooovn.mybatis.dao.BoardDao;
 import dev.hsooovn.mybatis.dao.PostDao;
 import dev.hsooovn.mybatis.dto.BoardDto;
-import dev.hsooovn.mybatis.dto.PostDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 @Component
 public class TestComponent {
