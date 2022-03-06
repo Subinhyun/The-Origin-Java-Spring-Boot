@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: test
+
+logging:
+  level:
+    root: warn
+    dev.hsooovn: info
+
+custom:
+  property:
+    single: custom-property
+    comlist: comma, sparated, list, to, value
+# custom.property.single
+# custom.property.comlist

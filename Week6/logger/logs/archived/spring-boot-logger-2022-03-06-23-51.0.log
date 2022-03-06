@@ -1,0 +1,4 @@
+2022-03-06 23:51:37,659 INFO StartupInfoLogger [main] Starting JpaApplication using Java 11.0.11 on hsooovnkui-MacBookAir.local with PID 73589 (/Users/d0dduck/Downloads/jpa/build/classes/java/main started by d0dduck in /Users/d0dduck/Downloads/jpa)
+2022-03-06 23:51:37,664 INFO SpringApplication [main] The following 1 profile is active: "test"
+2022-03-06 23:51:41,103 WARN JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-06 23:51:41,515 INFO StartupInfoLogger [main] Started JpaApplication in 4.652 seconds (JVM running for 5.714)
