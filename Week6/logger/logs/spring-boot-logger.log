@@ -1,4 +1,15 @@
-2022-03-06 23:53:09,280 INFO StartupInfoLogger [main] Starting JpaApplication using Java 11.0.11 on hsooovnkui-MacBookAir.local with PID 73647 (/Users/d0dduck/Downloads/jpa/build/classes/java/main started by d0dduck in /Users/d0dduck/Downloads/jpa)
-2022-03-06 23:53:09,309 INFO SpringApplication [main] The following 1 profile is active: "test"
-2022-03-06 23:53:14,990 WARN JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-03-06 23:53:15,502 INFO StartupInfoLogger [main] Started JpaApplication in 7.699 seconds (JVM running for 9.334)
+2022-03-07 00:42:17,480 WARN AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2022-03-07 00:42:17,549 ERROR LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+

@@ -11,3 +11,10 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.H2Dialect
+
+logging:
+  config: classpath:logback-spring-test.xml
+
+custom:
+  property:
+    single: test-property
