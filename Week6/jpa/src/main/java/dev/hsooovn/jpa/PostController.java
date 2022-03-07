@@ -1,6 +1,9 @@
 package dev.hsooovn.jpa;
 
 import com.google.gson.Gson;
+import dev.hsooovn.jpa.aspect.LogExecutionTime;
+import dev.hsooovn.jpa.aspect.LogArguments;
+import dev.hsooovn.jpa.aspect.LogReturn;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +28,7 @@ public class PostController {
 //      this.gson = gson.getGson();
     }
 
+    @LogArguments
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
     public void createPost(
@@ -33,6 +37,7 @@ public class PostController {
         this.postService.createPost(postDto);
     }
 
+    @LogReturn
     @GetMapping("{id}")
     public PostDto readPost(
             @PathVariable("id") int id
@@ -40,6 +45,7 @@ public class PostController {
         return this.postService.readPost(id);
     }
 
+    @LogExecutionTime
     @GetMapping("")
     public List<PostDto> readPostAll(){
         return this.postService.readPostAll();
