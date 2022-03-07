@@ -1,0 +1,1 @@
+2022-03-07 23:56:12,582 WARN AbstractHandlerExceptionResolver [http-nio-8080-exec-3] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public void dev.hsooovn.jpa.PostController.testValid(dev.hsooovn.jpa.ValidTestDto)]

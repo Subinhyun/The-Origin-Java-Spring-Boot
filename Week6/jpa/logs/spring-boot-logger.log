@@ -1,9 +1,1 @@
-2022-03-07 20:29:09,039 WARN JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-03-07 20:29:18,700 TRACE LoggingAspect [http-nio-8080-exec-2] method description: [public void dev.hsooovn.jpa.PostController.createPost(dev.hsooovn.jpa.PostDto)]
-2022-03-07 20:29:18,706 TRACE LoggingAspect [http-nio-8080-exec-2] method name: [createPost]
-2022-03-07 20:29:18,706 TRACE LoggingAspect [http-nio-8080-exec-2] declaring class: [class dev.hsooovn.jpa.PostController]
-2022-03-07 20:29:18,706 TRACE LoggingAspect [http-nio-8080-exec-2] argument: [PostDto{id=0, title='JPA and Controller', content='CRUD is hard.', writer='hsooovn', boardId=0}]
-2022-03-07 20:29:37,329 TRACE LoggingAspect [http-nio-8080-exec-4] method: [readPost]
-2022-03-07 20:29:37,330 TRACE LoggingAspect [http-nio-8080-exec-4] return type: [class dev.hsooovn.jpa.PostDto]
-2022-03-07 20:29:37,330 TRACE LoggingAspect [http-nio-8080-exec-4] return value: [PostDto{id=1, title='JPA and Controller', content='CRUD is hard.', writer='hsooovn', boardId=0}]
-2022-03-07 20:29:39,912 TRACE LoggingAspect [http-nio-8080-exec-5] method executed in 148
+2022-03-08 00:01:00,144 WARN AbstractHandlerExceptionResolver [http-nio-8080-exec-10] Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public void dev.hsooovn.jpa.PostController.testValid(dev.hsooovn.jpa.ValidTestDto): [Field error in object 'validTestDto' on field 'notEmptyStringList': rejected value [[]]; codes [NotEmpty.validTestDto.notEmptyStringList,NotEmpty.notEmptyStringList,NotEmpty.java.util.List,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [validTestDto.notEmptyStringList,notEmptyStringList]; arguments []; default message [notEmptyStringList]]; default message [비어 있을 수 없습니다]] ]

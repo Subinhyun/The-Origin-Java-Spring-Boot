@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -32,7 +33,7 @@ public class PostController {
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
     public void createPost(
-            @RequestBody PostDto postDto
+            @Valid @RequestBody PostDto postDto
     ){
         this.postService.createPost(postDto);
     }
@@ -66,5 +67,10 @@ public class PostController {
             @PathVariable("id") int id
     ){
         this.postService.deletePost(id);
+    }
+
+    @PostMapping("test-valid")
+    public void testValid(@Valid @RequestBody ValidTestDto dto){
+        logger.warn(dto.toString());
     }
 }
