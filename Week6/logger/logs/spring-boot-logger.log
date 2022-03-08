@@ -1,15 +1,1 @@
-2022-03-07 00:42:17,480 WARN AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
-2022-03-07 00:42:17,549 ERROR LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Web server failed to start. Port 8080 was already in use.
-
-Action:
-
-Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
-
+2022-03-07 14:15:37,281 WARN HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Retrograde clock change detected (housekeeper delta=29s800ms), soft-evicting connections from pool.
