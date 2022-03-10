@@ -1,0 +1,5 @@
+2022-03-10 14:48:20,922 WARN JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-10 14:48:24,516 TRACE LoggingAspect [http-nio-8080-exec-1] method description: [public void dev.hsooovn.jpa.PostController.createPost(dev.hsooovn.jpa.PostDto)]
+2022-03-10 14:48:24,521 TRACE LoggingAspect [http-nio-8080-exec-1] method name: [createPost]
+2022-03-10 14:48:24,521 TRACE LoggingAspect [http-nio-8080-exec-1] declaring class: [class dev.hsooovn.jpa.PostController]
+2022-03-10 14:48:24,521 TRACE LoggingAspect [http-nio-8080-exec-1] argument: [PostDto{id=0, title='validation title', content='Validating user input this is long..', writer='hsooovn', boardId=0}]
