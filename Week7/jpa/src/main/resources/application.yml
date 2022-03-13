@@ -2,17 +2,22 @@ spring:
   profiles:
     active: test
 
-logging:
-  level:
-    dev.hsooovn.jpa.handler: debug
-
-custom:
-  property:
-    single: custom-property
-    comlist: comma,sparated,list,to,value
-    ncp:
-      id: api-id
-      key: api-key
-      url: https://ncp.com/
-# custom.property.single
-# custom.property.comlist
+management:
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: health,info,loggers,shutdown,prometheus
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+      show-components: always
+    info:
+      enabled: true
+    loggers:
+      enabled: true
+    shutdown:
+      enabled: true
+    prometheus:
+      enabled: true
