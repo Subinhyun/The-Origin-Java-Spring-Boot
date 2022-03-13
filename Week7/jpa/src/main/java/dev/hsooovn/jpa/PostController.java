@@ -1,6 +1,5 @@
 package dev.hsooovn.jpa;
 
-import com.google.gson.Gson;
 import dev.hsooovn.jpa.aspect.LogExecutionTime;
 import dev.hsooovn.jpa.aspect.LogArguments;
 import dev.hsooovn.jpa.aspect.LogReturn;
@@ -21,14 +20,12 @@ public class PostController {
     private final PostService postService;
 
     public PostController(
-            @Autowired PostService postService,
-            @Autowired Gson gson
+            @Autowired PostService postService
     ){
       this.postService = postService;
-      logger.info(gson.toString());
     }
 
-    @LogArguments
+//    @LogArguments
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
     public void createPost(
@@ -37,7 +34,7 @@ public class PostController {
         this.postService.createPost(postDto);
     }
 
-    @LogReturn
+//    @LogReturn
     @GetMapping("{id}")
     public PostDto readPost(
             @PathVariable("id") int id
@@ -45,7 +42,7 @@ public class PostController {
         return this.postService.readPost(id);
     }
 
-    @LogExecutionTime
+//    @LogExecutionTime
     @GetMapping("")
     public List<PostDto> readPostAll(){
         return this.postService.readPostAll();

@@ -26,12 +26,8 @@ public class PostService {
     public PostDto readPost(int id){
         PostEntity postEntity = this.postDao.readPost(id);
         return new PostDto(
-                Math.toIntExact(postEntity.getId()),
-                postEntity.getTitle(),
-                postEntity.getContent(),
-                postEntity.getWriter(),
-                postEntity.getBoardEntity() == null
-                        ? 0 : Math.toIntExact(postEntity.getBoardEntity().getId())
+                //                postEntity.getBoardEntity() == null
+//                        ? 0 : Math.toIntExact(postEntity.getBoardEntity().getId())
         );
     }
 
@@ -42,12 +38,8 @@ public class PostService {
         while(iterator.hasNext()){
             PostEntity postEntity = iterator.next();
             postDtoList.add(new PostDto(
-                    Math.toIntExact(postEntity.getId()),
-                    postEntity.getTitle(),
-                    postEntity.getContent(),
-                    postEntity.getWriter(),
-                    postEntity.getBoardEntity() == null
-                            ? 0 : Math.toIntExact(postEntity.getBoardEntity().getId())
+                    //                    postEntity.getBoardEntity() == null
+//                            ? 0 : Math.toIntExact(postEntity.getBoardEntity().getId())
             ));
         }
         return postDtoList;
