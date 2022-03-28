@@ -1,5 +1,8 @@
-package dev.hsooovn.producer.model;
+package dev.hsooovn.consumer.model;
 
+import org.springframework.data.redis.core.RedisHash;
+
+@RedisHash("Job")
 public class JobProcess {
     private String id;
     private int status;

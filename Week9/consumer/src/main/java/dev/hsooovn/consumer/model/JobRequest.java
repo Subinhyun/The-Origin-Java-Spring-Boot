@@ -1,4 +1,4 @@
-package dev.hsooovn.producer.model;
+package dev.hsooovn.consumer.model;
 
 public class JobRequest {
     private String jobId;
