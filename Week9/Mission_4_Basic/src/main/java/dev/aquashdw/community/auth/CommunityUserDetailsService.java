@@ -44,12 +44,12 @@ public class CommunityUserDetailsService implements UserDetailsService {
         UserEntity userEntity = this.userRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException(username));
         logger.info("username: {}, last logged in at: {}", userEntity.getUsername(), userEntity.getLastLogin());
-//        return new User(
-//                userEntity.getUsername(),
-//                userEntity.getPassword(),
-//                Collections.emptyList()
-//        );
-        return new AutoLockUserDetails(userEntity);
+        return new User(
+                userEntity.getUsername(),
+                userEntity.getPassword(),
+                Collections.emptyList()
+        );
+//        return new AutoLockUserDetails(userEntity);
     }
 
     public void createUser(String username, String password, Boolean isShopOwner) {
